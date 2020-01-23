@@ -52,8 +52,9 @@ module.exports.checkInput = function(req, res) {
 module.exports.addCrop = async function(req, res) {
   try {
     const crop = req.body;
+    crop.seller=req.user._id
     const newCrop = await cropModel.create(crop);
-    res.json({ success: "crop added" });
+    res.json({result:"found"})
   } catch (err) {
     console.log(err);
     res.json(err);
@@ -77,9 +78,9 @@ module.exports.addCrop_sms = async function(req, res) {
     var data = arr[arr.length - 1];
     console.log(data);
     const number = data.number;
-    const user = await userModel.find({ phone: number - 910000000000 })
+    const user = await userModel.find({ phone: number })
     console.log(user)
-    if ( Object.keys(user).length == 0)
+    if (Object.keys(user).length == 0)
      {
       const message = `You are not a registered farmer.Please register first on our portal FarmerConnect`;
       sendSMS(number, message);
@@ -94,7 +95,7 @@ module.exports.addCrop_sms = async function(req, res) {
       price: data[2],
       quantity: data[3],
       description: data[4],
-      phone: number - 910000000000,
+      phone: number,
       seller:user[0]._id
     };
     const crop = await cropModel.create(obj);
@@ -117,8 +118,10 @@ module.exports.getFarmer = async function(req, res,next) {
   try {
       console.log("Something");
     const {planId} = req.params;
+    console.log(planId)
     const crop = await cropModel.findById(planId);
     const sellerId = crop.seller;
+    console.log(sellerId)
     const user = await userModel.findById(sellerId);
     req.role = user.role;
     req.user = user;

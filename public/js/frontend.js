@@ -10,7 +10,10 @@ var passwordN = document.getElementById("password");
 var loginForm = document.getElementById("loginForm");
 var phoneLogin = document.getElementById("phoneLogin");
 var passwordLogin = document.getElementById("passwordLogin");
-
+var cropName=document.getElementById("cropName")
+var priceC=document.getElementById("price")
+var quantityC=document.getElementById("quantity")
+var addCropFarm=document.getElementById('addCropForm')
 
 var promise = new Promise(function(resolve, reject) {
   navigator.geolocation.getCurrentPosition(position => {
@@ -82,26 +85,26 @@ if (loginForm) {
   });
 }
 
-if (cropForm) {
-  cropForm.addEventListener("submit", async function(event) {
+if (addCropForm) {
+  addCropForm.addEventListener("submit", async function(event) {
     event.preventDefault();
-    const inputs = document.getElementsByTagName("input");
-    const name = inputs[0].value;
-    const price = inputs[1].value;
-    const quantity = inputs[2].value;
+    const name = cropName.value;
+    const price = parseInt(priceC.value);
+    const quantity = quantityC.value;
 
-    const res = await axios.post("/api/crops", {
+    const res = await axios.post("/addcrop", {
       name,
       price,
       quantity
     });
-    if (res.data.success) {
+    if (res.data.result) {
       alert("crop added to listing");
-      location.assign("/profile");
+      location.assign("/listing");
     } else {
       alert("crop could not be added some data was missing");
     }
   });
 }
+
 
 
