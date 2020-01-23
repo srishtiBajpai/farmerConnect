@@ -3,7 +3,7 @@
     h2 #{crop.name}
     .signup-pricing
       span.pricing Rs.#{crop.price}
-      | /kg
+      | / KG
   .signup-features
     ul
       li
@@ -11,14 +11,20 @@
         | #{crop.description}
       li
         i.fas.fa-check.small-icon  
-        | From Punjab
+        | Quantity Available: #{crop.quantity}
+      -if(role=="buyer"){ 
       li
         i.fas.fa-check.small-icon  
-        | Quantity Available: #{crop.quantity}
+        | From #{crop.address}
       li
         i.fas.fa-check.small-icon  
         | Free delivery Available
     .signup-button
       a.btn.btn-full(href='#') Buy Now
     .signup-button
-      a(href=`/cropFarmerPage/${crop["_id"]}`).btn.btn-full Contact Farmer
+      a(href=`/cropFarmerPage/${crop["_id"]}`).btn.btn-full Contact Farmer    
+    -}else{ 
+    .signup-button
+      a.btn.btn-full(href='#') Delete This Crop 
+    -}  
+    

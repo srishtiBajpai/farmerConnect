@@ -62,11 +62,11 @@ module.exports.protectRoute = async function(req, res, next) {
     ? req.headers.authorization.split(" ")[1]
     : null;
 
-  console.log(token);
+  // console.log(token);
   try {
     if (token) {
       const ans = await jwt.verify(`${token}`, KEY);
-      console.log(ans);
+      // console.log(ans);
 
       if (ans) {
         const user = await userModel.findOne({ _id: ans.id });

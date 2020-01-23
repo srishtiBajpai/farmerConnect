@@ -1,11 +1,18 @@
-nav.navbar.navbar-expand-lg.navbar-light.bg-white.pl-5
-  nav.navbar.navbar-light.bg-white
-    span.navbar-brand.mb-0.h2 Navbar
-  #navbarNav.collapse.navbar-collapse.d-flex.flex-row-reverse.pr-5
-    ul.navbar-nav
-      li.nav-item
-        a.nav-link(href='/listing') Listings 
-      li.nav-item.active
-        a.nav-link(href='/profile')
-          | User😎  
-          span.sr-only (current)
+.navbar
+  a(href='https://www.cdkglobal.com/us')
+    img(src='./img/Webp.net-resizeimage.png', alt='logo')
+  a(href='#')
+    i.fas.fa-pen
+    |  About Us
+  a.active(href='/listing')
+    i.fa.fa-clipboard-list
+    |  Listings
+  a.active(href='/addcrop')
+    i.fa.fa-clipboard-list
+    |  Add Crop    
+  a(href='/profile')
+    i.fa.fa-fw.fa-envelope
+    |  Profile
+  a(href='#')
+    i.fas.fa-sign-out-alt
+    |  Logout

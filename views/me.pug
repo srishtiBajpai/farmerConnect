@@ -11,10 +11,18 @@
           h5.mb-3 User Profile
           .row
             .col-md-6
+              h5 Name
+              p  #{user.name}  
               h6 About
-              p  I am a Farmer
-              h6 Crops
+              p  I am a #{user.role}
+              -if(user.role=="farmer"){
+              h6 What i do
               p  I sell variety of fresh crops.
+              -}
+              -else{
+              h6 What i do
+              p  I buy variety of fresh crops.
+              -}
             .col-md-12
               h5.mt-2
                 span.fa.fa-clock-o.ion-clock.float-right
@@ -89,105 +97,3 @@
       label.custom-file
         input#file.custom-file-input(type='file', accept='image/*', onchange='handleFiles(this.files)')
         span.custom-file-control Choose file
-// Footer
-footer.page-footer.font-small.blue-grey.lighten-5
-  div(style='background-color: #21d192;')
-    .container
-      // Grid row
-      .row.py-4.d-flex.align-items-center
-        // Grid column
-        .col-md-6.col-lg-5.text-center.text-md-left.mb-4.mb-md-0
-          h6.mb-0 Get connected with us on social networks!
-        // Grid column
-        // Grid column
-        .col-md-6.col-lg-7.text-center.text-md-right
-          // Facebook
-          a.fb-ic
-            i.fab.fa-facebook-f.white-text.mr-4  
-          // Twitter
-          a.tw-ic
-            i.fab.fa-twitter.white-text.mr-4  
-          // Google +
-          a.gplus-ic
-            i.fab.fa-google-plus-g.white-text.mr-4  
-          // Linkedin
-          a.li-ic
-            i.fab.fa-linkedin-in.white-text.mr-4  
-          // Instagram
-          a.ins-ic
-            i.fab.fa-instagram.white-text  
-        // Grid column
-        // Grid row
-        // Footer Links
-        .container.text-center.text-md-left.mt-5
-          // Grid row
-          .row.mt-3.dark-grey-text
-            // Grid column
-            .col-md-3.col-lg-4.col-xl-3.mb-4
-              // Content
-              h6.text-uppercase.font-weight-bold CDK Global
-              hr.teal.accent-3.mb-4.mt-0.d-inline-block.mx-auto(style='width: 60px;')
-              p
-                | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque maiores officia repellend
-perferendis modi error. Laboriosam hic praesentium suscipit .
-            // Grid column
-            // Grid column
-            .col-md-2.col-lg-2.col-xl-2.mx-auto.mb-4
-              // Links
-              h6.text-uppercase.font-weight-bold Users
-              hr.teal.accent-3.mb-4.mt-0.d-inline-block.mx-auto(style='width: 60px;')
-              p
-                a.dark-grey-text(href='#!') Farmer
-              p
-                a.dark-grey-text(href='#!') Buyer
-              p
-                a.dark-grey-text(href='#!') Farmer
-              p
-                a.dark-grey-text(href='#!') Buyer
-            // Grid column
-            // Grid column
-            .col-md-3.col-lg-2.col-xl-2.mx-auto.mb-4
-              // Links
-              h6.text-uppercase.font-weight-bold Useful links
-              hr.teal.accent-3.mb-4.mt-0.d-inline-block.mx-auto(style='width: 60px;')
-              p
-                a.dark-grey-text(href='#!') Your Account
-              p
-                a.dark-grey-text(href='#!') Become an Affiliate
-              p
-                a.dark-grey-text(href='#!') Shipping Rates
-              p
-                a.dark-grey-text(href='#!') Help
-            // Grid column
-            // Grid column
-            .col-md-4.col-lg-3.col-xl-3.mx-auto.mb-md-0.mb-4
-              // Links
-              h6.text-uppercase.font-weight-bold Contact
-              hr.teal.accent-3.mb-4.mt-0.d-inline-block.mx-auto(style='width: 60px;')
-              p
-                i.fas.fa-home.mr-3
-                |  Navi Mumbai, M 10012, India
-              p
-                i.fas.fa-envelope.mr-3
-                |  enquiries@cdkglobal.com
-              p
-                i.fas.fa-print.mr-3
-                |  9876543219
-            // Grid column
-            // Grid row
-            // Footer Links
-            // Copyright
-            .footer-copyright.text-center.text-black-50.py-3
-              | © 2020 Copyright:
-              a.dark-grey-text(href='https://www.cdkglobal.com/us')
-              | CDK Global
-            // Copyright
-            // Footer
-//-             script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js', integrity='sha384-J6qa4849b
-//- +poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n', crossorigin='anonymous')
-//-             script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js
-//- integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo
-//- crossorigin='anonymous')
-//-             script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js
-//- integrity='sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6
-//- crossorigin='anonymous
