@@ -12,7 +12,7 @@
     "axios": "^0.19.1",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.8.9",
     "nexmo": "^2.5.3",
     "pug": "^2.0.4",
